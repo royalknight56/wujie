@@ -16,6 +16,15 @@ export default defineConfig({
     ["meta", { property: "og:title", content: ogTitle }],
     ["meta", { property: "og:image", content: ogImage }],
     ["meta", { property: "og:url", content: ogUrl }],
+    ["script", { async: "", src: "https://www.googletagmanager.com/gtag/js?id=G-22P9VKHL8B" }],
+    [
+      "script",
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-22P9VKHL8B');`,
+    ],
   ],
 
   vue: {
@@ -34,10 +43,6 @@ export default defineConfig({
       appId: "QMIAJMDLL1",
       apiKey: "4eaef57a0122ce0454d3aed08f822178",
       indexName: "wujie-microio",
-    },
-
-    footer: {
-      message: "Released the MIT License.",
     },
 
     nav: [
@@ -90,7 +95,7 @@ export default defineConfig({
             },
             {
               text: "创建项目",
-              link: "/guide/install"
+              link: "/guide/install",
             },
           ],
         },
